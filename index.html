@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Navigator | Chandigarh University</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1746a2;
+        }
+
+        .logo span {
+            color: #f28c28;
+        }
+
+        .header-text {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 45px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #1746a2;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            max-width: 650px;
+            margin: auto;
+            display: flex;
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 15px;
+            font-size: 15px;
+        }
+
+        .search-box button {
+            background: #1746a2;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .search-box button:hover {
+            background: #10357e;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 22px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .card button {
+            background: #1746a2;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .card button:hover {
+            background: #10357e;
+        }
+
+        .quick-access {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .quick-access button {
+            background: white;
+            border: 1px solid #dbe2ef;
+            padding: 13px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .quick-access button:hover {
+            background: #eaf0ff;
+            border-color: #1746a2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background: white;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            .hero {
+                padding: 50px 20px 35px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            Campus<span>Navigator</span>
+        </div>
+
+        <div class="header-text">
+            Chandigarh University
+        </div>
+
+    </header>
+
+
+    <section class="hero">
+
+        <h1>
+            Find Your Way Around <span>Campus</span>
+        </h1>
+
+        <p>
+            Discover buildings, classrooms, faculty cabins,
+            and important campus locations.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search teacher, room, library, office..."
+            >
+
+            <button onclick="searchLocation()">
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>Explore Navigation</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🏢</div>
+
+                <h3>E Building Navigation</h3>
+
+                <p>
+                    Explore all 7 floors of the C3 Building.
+                    Find faculty cabins, libraries, offices,
+                    and important facilities.
+                </p>
+
+                <button onclick="openBuilding()">
+                    Explore Building
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🗺️</div>
+
+                <h3>Campus Map</h3>
+
+                <p>
+                    Discover important locations across
+                    Chandigarh University and get
+                    simple walking directions.
+                </p>
+
+                <button onclick="openCampus()">
+                    Explore Campus
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>Quick Access</h2>
+
+        <div class="quick-access">
+
+            <button onclick="quickSearch('Library')">
+                📚 Library
+            </button>
+
+            <button onclick="quickSearch('Administrative Office')">
+                🏢 Administrative Office
+            </button>
+
+            <button onclick="quickSearch('Skill Centre')">
+                🎓 Skill Centres
+            </button>
+
+            <button onclick="quickSearch('Faculty Cabin')">
+                👨‍🏫 Faculty Cabins
+            </button>
+
+            <button onclick="quickSearch('Cafeteria')">
+                ☕ Cafeteria
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        Campus Navigator | Chandigarh University
+
+        <br><br>
+
+        Your guide to finding places across campus.
+
+    </footer>
+
+
+    <script>
+
+        function searchLocation() {
+
+            const search = document.getElementById("searchInput").value;
+
+            if (search.trim() === "") {
+
+                alert("Please enter a location to search.");
+
+                return;
+
+            }
+
+            alert("Searching for: " + search);
+
+        }
+
+
+        function quickSearch(location) {
+
+            document.getElementById("searchInput").value = location;
+
+            searchLocation();
+
+        }
+
+
+        function openBuilding() {
+
+            alert("C3 Building Navigation will be added next!");
+
+        }
+
+
+        function openCampus() {
+
+            alert("Campus Map will be added next!");
+
+        }
+
+    </script>
+
+</body>
+</html>
